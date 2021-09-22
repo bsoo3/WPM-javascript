@@ -3,18 +3,24 @@
 
 <body>
     <script>
-        setTimeout(function() {
-            console.log(3);
-        }, 100);
-        setTimeout(function() {
-            console.log(2);
-        }, 1000);
-        setTimeout(function() {
-            console.log(1);
-        }, 2000);
-        setTimeout(function() {
-            console.log("GO");
-        }, 2400);
+        const wpm = {
+            countdown: function() {
+                setTimeout(function() {
+                    console.log(3);
+                }, 100);
+                setTimeout(function() {
+                    console.log(2);
+                }, 1000);
+                setTimeout(function() {
+                    console.log(1);
+                }, 2000);
+                setTimeout(function() {
+                    console.log("GO");
+                }, 2400);
+            },
+
+        }
+        wmp.countdown();
     </script>
 </body>
 
