@@ -2,40 +2,34 @@
 <html>
 
 <body>
-    <input type='file' accept='text/plain' onchange='openFile(event)'><br>
-    <img id='output'>
+    <input type="file" onchange="loadFile(this.files[0])">
     <script>
         const wpm = {
-            countdown: function() {
-                setTimeout(function() {
-                    console.log(3);
-                }, 100);
-                setTimeout(function() {
-                    console.log(2);
-                }, 1000);
-                setTimeout(function() {
-                    console.log(1);
-                }, 2000);
-                setTimeout(function() {
-                    console.log("GO");
-                }, 2400);
-            },
-            fileWordPrinter: function() {
-                var openFile = function(event) {
-                    var input = event.target;
-
-                    var reader = new FileReader();
-                    reader.onload = function() {
-                        var text = reader.result;
-                        console.log(reader.result.substring(0, 200));
+                countdown: function() {
+                    setTimeout(function() {
+                        console.log(3);
+                    }, 100);
+                    setTimeout(function() {
+                        console.log(2);
+                    }, 1000);
+                    setTimeout(function() {
+                        console.log(1);
+                    }, 2000);
+                    setTimeout(function() {
+                        console.log("GO");
+                    }, 2400);
+                },
+                fileWordPrinter: function() {
+                    var req = new XMLHttpRequest();
+                    req.onload = function() {
+                        process_webgl_data(this.responseText);
                     };
-                    reader.readAsText(input.files[0]);
-                };
+                    req.open
 
 
+                }
             }
-        }
-        wpm.countdown();
+            //wpm.countdown();
     </script>
 </body>
 
