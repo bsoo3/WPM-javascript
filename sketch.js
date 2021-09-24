@@ -1,11 +1,17 @@
 var txt;
 
 function preload() {
-    txt = loadStrings("words.txt");
+    var txt = loadStrings("words.txt");
 }
 
 function setup() {
     noCanvas();
     //console.log(txt);
-    createP(join(txt, "<br/>"));
+    //let stBesed = Math.random(15) + 1;
+    var words = split(txt, ' ')
+
+    for (var i = 0; i < words.lenght; i++) {
+        createP(words[i]);
+    }
+    //createP(join(txt, "<br/>"));
 }
